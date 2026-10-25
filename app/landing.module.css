@@ -1,0 +1,150 @@
+.main {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.blurb {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.statusGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: #ffffff;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.cta:hover {
+  background: var(--primary-hover);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--primary-focus-ring);
+  outline-offset: 2px;
+}
+
+.cta:active {
+  background: var(--primary-active);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  background: var(--loading-bg);
+  color: var(--loading-text);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--loading-text);
+}
+
+.chipOk {
+  background: var(--ok-bg);
+  color: var(--ok-text);
+  border-color: var(--ok-border);
+}
+
+.chipOk .dot {
+  background: var(--ok-dot);
+}
+
+.chipFail {
+  background: var(--fail-bg);
+  color: var(--fail-text);
+  border-color: var(--fail-border);
+}
+
+.chipFail .dot {
+  background: var(--fail-dot);
+}
+
+.chipLoading {
+  background: var(--loading-bg);
+  color: var(--loading-text);
+  border-color: var(--border);
+  animation: chipPulse 1.2s ease-in-out infinite;
+}
+
+.chipLoading .dot {
+  background: var(--loading-text);
+}
+
+@keyframes chipPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chipLoading {
+    animation: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .main {
+    padding: 5rem 2rem 6rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .statusGroup {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
